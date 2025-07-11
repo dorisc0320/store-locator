@@ -130,8 +130,8 @@ function updateDistrictFilter() {
  */
 async function loadStoresData() {
     try {
-        // 從 window.storesJsonUrl 全域變數獲取 JSON 檔案的 URL
-        const response = await fetch(window.storesJsonUrl); 
+        // 請將 'YOUR_STORES_JSON_URL' 替換為您實際託管 stores.json 的公開網址
+        const response = await fetch('https://dorisc0320.github.io/my-store-app/stores.json'); 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -150,10 +150,9 @@ async function loadStoresData() {
 }
 
 // 頁面載入時載入門市資料
-// 確保在 DOM 元素可用後才添加事件監聽器，但 loadStoresData 可以在此時呼叫
 loadStoresData();
 
-// 事件監聽器
+// 事件監聽器 (確保在 DOM 元素可用後才添加)
 document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener("input", filterStores); // 搜尋輸入框變化時過濾
     cityFilter.addEventListener("change", updateDistrictFilter); // 縣市選擇變化時更新區域並過濾
