@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f8f8f8;
+    color: #333;
+}
+h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+input, select {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners for inputs */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    flex-grow: 1; /* Allow inputs to grow */
+    max-width: 300px; /* Limit max width for better mobile layout */
+}
+select {
+    background-color: #fff;
+    cursor: pointer;
+}
+.table-container {
+    overflow-x: auto;
+    border: 1px solid #eee;
+    border-radius: 8px; /* Rounded corners for table container */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+th, td {
+    border: 1px solid #eee; /* Lighter border for table cells */
+    padding: 12px 15px;
+    text-align: left;
+}
+th {
+    background-color: #e9ecef; /* Light grey header */
+    color: #495057;
+    font-weight: bold;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping */
+}
+tr:hover {
+    background-color: #f1f1f1; /* Hover effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    input, select {
+        max-width: 100%;
+    }
+}
