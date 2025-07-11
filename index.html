@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>門市據點查詢</title>
+    <!-- 載入外部 CSS 檔案 -->
+    <link rel="stylesheet" href="https://myusername.github.io/store-locator/styles.css">
+</head>
+<body>
+
+    <div id="store-locator-app">
+        <h2>門市據點查詢</h2>
+
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="搜尋門市、地址或電話">
+            
+            <select id="cityFilter">
+                <option value="">所有縣市</option>
+            </select>
+
+            <select id="districtFilter" style="display: none;">
+                <option value="">所有區域</option>
+            </select>
+        </div>
+
+        <div class="table-container">
+            <table id="storeTable">
+                <thead>
+                    <tr>
+                        <th>門市名稱</th>
+                        <th>地址</th>
+                        <th>電話</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan="3" style="text-align: center; color: #777;">載入門市資料中...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 在載入 script.js 之前，先定義 storesJsonUrl 全域變數 -->
+    <script>
+        window.storesJsonUrl = "https://myusername.github.io/store-locator/stores.json"; 
+    </script>
+    <!-- 載入外部 JavaScript 檔案 -->
+    <script src="https://myusername.github.io/store-locator/script.js"></script>
+
+</body>
+</html>
