@@ -130,8 +130,8 @@ function updateDistrictFilter() {
  */
 async function loadStoresData() {
     try {
-        // 請將 'YOUR_STORES_JSON_URL' 替換為您實際託管 stores.json 的公開網址
-        const response = await fetch('https://dorisc0320.github.io/my-store-app/stores.json'); 
+        // 現在使用 index.html 中定義的 window.storesJsonUrl
+        const response = await fetch(window.storesJsonUrl); 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
